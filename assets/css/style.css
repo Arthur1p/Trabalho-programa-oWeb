@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: brown;
+    height: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    background-color: lightgray;
+    padding: 10px 0;
+}
+
+.navegation {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.navegation li {
+    margin: 0 15px;
+}
+
+.navegation li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#div_principal {
+    background-image: url("../img/carro.png");
+    background-size: cover;
+    min-height: 600px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.efeito .container {
+    width: 80%;
+    margin: auto;
+	padding: 20px;
+}
+
+.container h1, p {
+	margin-bottom: 2rem;
+}
+
+
+button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.btn-explore {
+    background-color: brown;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-explore:hover {
+    background-color: darkred;
+}
+
+footer {
+    background-color: brown;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.btn-cadastrar {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-cadastrar:hover {
+    background-color: #0056b3;
+}
