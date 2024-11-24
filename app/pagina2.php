@@ -17,8 +17,11 @@ if (!isset($_SESSION['user'])) {
 require_once '../app/database/connection.php';
 
 try {
-    $stmt = $pdo->query("SELECT veiculo.codigo, veiculo.placa, veiculo.codigoMarca AS marca, veiculo.codigoCategoria AS categoria
-                         FROM veiculo");
+    $stmt = $pdo->query("SELECT veiculo.placa, 
+                                veiculo.codigoMarca, 
+                                veiculo.codigoCategoria
+                                FROM veiculo
+                        ");
 
     $veiculos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
@@ -44,19 +47,31 @@ try {
     </nav>
     <section id="veiculos">
         <div class="container">
-            <h2>Galeria de Veículos</h2>
-            <div class="veiculos-grid">
-                <?php if ($veiculos): ?>
-                    <?php foreach ($veiculos as $veiculo): ?>
-                        <div class="veiculo-card">
-                            <h3><?= htmlspecialchars($veiculo['marca']) ?> - <?= htmlspecialchars($veiculo['categoria']) ?></h3>
-                            <p>Placa: <?= htmlspecialchars($veiculo['placa']) ?></p>
-                        </div>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <p>Nenhum veículo disponível no momento.</p>
-                <?php endif; ?>
-            </div>
+            <h2>Veículos Disponíveis</h2>
+            <table class="tabela-veiculos">
+                <thead>
+                    <tr>
+                        <th>Marca</th>
+                        <th>Categoria</th>
+                        <th>Placa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if ($veiculos): ?>
+                        <?php foreach ($veiculos as $veiculo): ?>
+                            <tr>
+                                <td><?= htmlspecialchars($veiculo['codigoMarca']) ?></td>
+                                <td><?= htmlspecialchars($veiculo['codigoCategoria']) ?></td>
+                                <td><?= htmlspecialchars($veiculo['placa']) ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr>
+                            <td colspan="3">Nenhum veículo disponível no momento.</td>
+                        </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
             <button class="btn-cadastrar" onclick="window.location.href='pagina3.php'">Cadastrar Novo Veículo</button>
         </div>
     </section>

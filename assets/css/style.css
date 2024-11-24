@@ -34,7 +34,7 @@ nav {
     font-weight: bold;
 }
 
-#div_principal {
+#div_principal, #veiculos, #marcas, #categorias {
     background-image: url("../img/carro.png");
     background-size: cover;
     min-height: 600px;
@@ -92,4 +92,32 @@ footer {
 
 .btn-cadastrar:hover {
     background-color: #0056b3;
+    cursor: pointer;
+}
+
+
+.tabela-veiculos {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+.tabela-veiculos th, .tabela-veiculos td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.tabela-veiculos th {
+    background-color: #ee3131;
+    font-weight: bold;
+}
+
+.tabela-veiculos tr:nth-child(even) {
+    background-color: #3333f0;
+}
+
+.tabela-veiculos tr:hover {
+    background-color: #60fb2d;
 }

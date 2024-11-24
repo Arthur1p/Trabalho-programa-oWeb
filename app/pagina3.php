@@ -59,10 +59,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="text" id="placa" name="placa" placeholder="Digite a placa" required>
                 
                 <label for="codigoMarca">Código da Marca:</label>
-                <input type="number" id="codigoMarca" name="codigoMarca" placeholder="Digite o código da marca" required>
+                <input type="number" id="codigoMarca" name="codigoMarca" placeholder="Digite apenas 1 digito" required>
 
                 <label for="codigoCategoria">Código da Categoria:</label>
-                <input type="number" id="codigoCategoria" name="codigoCategoria" placeholder="Digite o código da categoria" required>
+                <input type="number" id="codigoCategoria" name="codigoCategoria" placeholder="Digite apenas 1 digito" required>
 
                 <button type="submit" class="btn-submit">Cadastrar Veículo</button>
             </form>
